@@ -16,6 +16,6 @@ func main() {
 		os.Exit(1)
 	}
 
-	fmt.Printf("Configration found: %+v\n", name)
+	fmt.Printf("Configration found: %s\n", name)
 	fmt.Printf("%+v\n", config.OutboundConfigs[0])
 }

@@ -6,13 +6,13 @@ import (
 	"gitlab.com/tozd/go/errors"
 )
 
-func SharedLinkToXrayConfig(link string) (name *string, config *conf.Config, err error) {
+func SharedLinkToXrayConfig(link string) (name string, config *conf.Config, err error) {
 	config, err = share.ConvertShareLinksToXrayJson(link)
 	if err != nil {
-		return nil, nil, errors.WithStack(err)
+		return "", nil, errors.WithStack(err)
 	}
 
-	name = config.OutboundConfigs[0].SendThrough
+	name = *config.OutboundConfigs[0].SendThrough
 	config.OutboundConfigs[0].SendThrough = nil
 
 	return name, config, err
