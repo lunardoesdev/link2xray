@@ -12,7 +12,7 @@ It addresses a specific, undocumented behavior in `libXray` where the `SendThrou
 *   **Simple Parsing:** Converts Xray shared links (VMess, VLESS, Trojan, etc.) directly into `*conf.Config` structs.
 *   **Metadata Extraction:** Returns the subscription name (remark) alongside the configuration.
 *   **Safety Handling:** Automatically sanitizes the configuration by handling the `SendThrough` field requirement described in [XTLS/libXray#90](https://github.com/XTLS/libXray/issues/90).
-*   **Drop-in Replacement:** Returns the standard configuration objects used by `libXray`.
+*   **Drop-in Replacement:** Returns the standard configuration objects used by `xray-core` go library.
 
 ## Installation
 
